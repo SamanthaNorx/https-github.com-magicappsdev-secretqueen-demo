@@ -1,42 +1,39 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import './index.css';
 
 function App() {
-  const [portalAbierto, setPortalAbierto] = useState(false)
+  const [portalAbierto, setPortalAbierto] = useState(false);
 
   const activarMagia = () => {
-    const audio = new Audio('/sonido-magico.mp3')
-    audio.play()
-    setPortalAbierto(true)
-  }
+    const audio = new Audio('/public/sonido-magico-10s.mp3');
+    audio.play();
+    setPortalAbierto(true);
+  };
 
   return (
-    <div style={{ textAlign: 'center', marginTop: '20%' }}>
+    <div style={{ textAlign: 'center', marginTop: '5%' }}>
       {!portalAbierto ? (
         <>
-          <h1>Invoco las Puertas del Conocimiento</h1>
-          <button
+          <h1 style={{ color: '#fff' }}>Bienvenida al Reino Secreto</h1>
+          <img
+            src="/public/puerta-magica.png"
+            alt="Puerta mágica"
             onClick={activarMagia}
-            style={{
-              padding: '1rem 2rem',
-              fontSize: '1.2rem',
-              background: 'goldenrod',
-              border: 'none',
-              borderRadius: '10px',
-              cursor: 'pointer',
-              boxShadow: '0 0 20px gold'
-            }}
-          >
-            Abrir Portal
-          </button>
+            style={{ width: '300px', cursor: 'pointer', transition: 'transform 1s' }}
+          />
         </>
       ) : (
-        <div>
-          <h2>Bienvenida, Reina Secreta 👑</h2>
-          <p>Tu biblioteca mágica está en construcción...</p>
-        </div>
+        <>
+          <h2 style={{ color: '#fff' }}>Has entrado en la Biblioteca de los Secretos</h2>
+          <img
+            src="/public/pasillo-biblioteca.png"
+            alt="Pasillo mágico"
+            style={{ width: '90%', marginTop: '20px' }}
+          />
+        </>
       )}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
