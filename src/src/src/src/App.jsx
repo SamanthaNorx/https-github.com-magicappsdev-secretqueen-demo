@@ -32,7 +32,11 @@ function App() {
           />
         </>
       )}
-    </div>
+    </div>{portalAbierto && (
+  <div className="sala-escritor">
+    <img src="/img/sala-escritor.png" alt="Sala del Escritor" className="sala-img" />
+  </div>
+)}
   );
 }
 
